@@ -1,0 +1,207 @@
+.example.example {
+  background-color: #fff;
+}
+
+.example.example * {
+  font-family: Source Code Pro, Consolas, Menlo, monospace;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.example.example .row {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 5px 10px;
+}
+
+.example.example .field {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.example.example .field.half-width {
+  width: 50%;
+}
+
+.example.example .field.quarter-width {
+  width: calc(25% - 10px);
+}
+
+.example.example .baseline {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #cfd7df;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example label {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 8px;
+  color: #cfd7df;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform-origin: 0 50%;
+  cursor: text;
+  transition-property: color, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example .input {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 7px;
+  color: #32325d;
+  background-color: transparent;
+}
+
+.example.example .input::-webkit-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example .input::-moz-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example .input:-ms-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example .input.StripeElement {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity;
+}
+
+.example.example .input.focused,
+.example.example .input:not(.empty) {
+  opacity: 1;
+}
+
+.example.example .input.focused::-webkit-input-placeholder,
+.example.example .input:not(.empty)::-webkit-input-placeholder {
+  color: #cfd7df;
+}
+
+.example.example .input.focused::-moz-placeholder,
+.example.example .input:not(.empty)::-moz-placeholder {
+  color: #cfd7df;
+}
+
+.example.example .input.focused:-ms-input-placeholder,
+.example.example .input:not(.empty):-ms-input-placeholder {
+  color: #cfd7df;
+}
+
+.example.example .input.focused + label,
+.example.example .input:not(.empty) + label {
+  color: #aab7c4;
+  transform: scale(0.85) translateY(-25px);
+  cursor: default;
+}
+
+.example.example .input.focused + label {
+  color: #24b47e;
+}
+
+.example.example .input.invalid + label {
+  color: #ffa27b;
+}
+
+.example.example .input.focused + label + .baseline {
+  background-color: #24b47e;
+}
+
+.example.example .input.focused.invalid + label + .baseline {
+  background-color: #e25950;
+}
+
+.example.example input, .example.example button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+}
+
+.example.example input:-webkit-autofill {
+  -webkit-text-fill-color: #e39f48;
+  transition: background-color 100000000s;
+  -webkit-animation: 1ms void-animation-out;
+}
+
+.example.example .StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.example.example input, .example.example button {
+  -webkit-animation: 1ms void-animation-out;
+}
+
+.example.example button {
+  display: block;
+  width: calc(100% - 30px);
+  height: 40px;
+  margin: 40px 15px 0;
+  background-color: #24b47e;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.example.example input:active {
+  background-color: #159570;
+}
+
+.example.example .error svg {
+  margin-top: 0 !important;
+}
+
+.example.example .error svg .base {
+  fill: #e25950;
+}
+
+.example.example .error svg .glyph {
+  fill: #fff;
+}
+
+.example.example .error .message {
+  color: #e25950;
+}
+
+.example.example .success .icon .border {
+  stroke: #abe9d2;
+}
+
+.example.example .success .icon .checkmark {
+  stroke: #24b47e;
+}
+
+.example.example .success .title {
+  color: #32325d;
+  font-size: 16px !important;
+}
+
+.example.example .success .message {
+  color: #8898aa;
+  font-size: 13px !important;
+}
+
+.example.example .success .reset path {
+  fill: #24b47e;
+}
