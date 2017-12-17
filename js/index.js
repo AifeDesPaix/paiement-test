@@ -5,6 +5,7 @@
 // La clé
 var stripe = Stripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 
+// la fct requete
 function registerElements(elements, exampleName) {
   var formClass = '.' + exampleName;
   var example = document.querySelector(formClass);
@@ -38,7 +39,7 @@ function registerElements(elements, exampleName) {
     );
   }
 
-  // Listen for errors from each Element, and show error messages in the UI.
+  // Erreurs ect pas testé tous les cas
   var savedErrors = {};
   elements.forEach(function(element, idx) {
     element.on('change', function(event) {
@@ -67,17 +68,17 @@ function registerElements(elements, exampleName) {
     });
   });
 
-  // Listen on the form's 'submit' handler...
+  // submit le form
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Show a loading screen...
+    // ça charge
     example.classList.add('submitting');
 
-    // Disable all inputs.
+    // ihm
     disableInputs();
 
-    // Gather additional customer data we may have collected in our form.
+    // add des infos
     var name = form.querySelector('#' + exampleName + '-name');
     var address1 = form.querySelector('#' + exampleName + '-address');
     var city = form.querySelector('#' + exampleName + '-city');
@@ -91,24 +92,26 @@ function registerElements(elements, exampleName) {
       address_zip: zip ? zip.value : undefined,
     };
 
+    // La token :
     // Use Stripe.js to create a token. We only need to pass in one Element
     // from the Element group in order to create a token. We can also pass
     // in the additional customer data we collected in our form.
     stripe.createToken(elements[0], additionalData).then(function(result) {
-      // Stop loading!
+      // Stop le load
       example.classList.remove('submitting');
 
       if (result.token) {
-        // If we received a token, show the token ID.
+        // Result token autorization du paiement
         example.querySelector('.token').innerText = result.token.id;
         example.classList.add('submitted');
       } else {
-        // Otherwise, un-disable inputs.
+        // IHM Sinon reautorise remplissage champs
         enableInputs();
       }
     });
   });
 
+  // events ihm
   resetButton.addEventListener('click', function(e) {
     e.preventDefault();
     // Resetting the form (instead of setting the value to `''` for each input)
